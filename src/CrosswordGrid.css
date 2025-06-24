@@ -1,0 +1,49 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 0; /* 👈 No spacing between cells */
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: 1px solid #ccc;
+  outline: none;
+  color: black; /* 👈 add this */
+}
+
+/* ✅ Active / playable cells */
+.cell.active {
+  background-color: white;
+}
+
+/* ⛔ Non-playable (black) cells */
+.cell.inactive {
+  background-color: black;
+  pointer-events: none;
+}
+
+/* ✅ Correctly filled cells */
+.cell.correct {
+  background-color: #c0f7c0;
+  border-color: #4caf50;
+}
